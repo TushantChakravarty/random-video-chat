@@ -340,9 +340,15 @@ p {
 #message-input {
   flex-grow: 1;
   padding: 10px;
-  border: 1px solid #ccc;
+  border-radius: 4px;
   font-size: 20px;
   min-width: 0;
+  background-color: #535353;
+  color: #ffffff;
+}
+
+#message-input:focus {
+  outline: none;
 }
 
 #send-btn {
