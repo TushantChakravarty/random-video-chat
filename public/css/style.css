@@ -68,7 +68,7 @@ p {
 
 #logo img {
   height: 100%;
-  width: 122px;
+  width: 90px;
 }
 
 #logo h1 {
@@ -86,7 +86,7 @@ p {
 }
 
 #peopleOnline p {
-  color: #166af4;
+  color: #ffffff;
   font-size: 20px;
   font-weight: 500;
   padding: 0;
@@ -105,11 +105,13 @@ p {
   gap: 10px;
   display: none;
   border-radius: 4px;
-  background: linear-gradient(
+  /* background: linear-gradient(
     125deg,
     #ff8a00 4.94%,
     rgba(255, 199, 0, 0.85) 104.23%
-  );
+  ); */
+  border: 1px solid
+    linear-gradient(125deg, #ff8a00 4.94%, rgba(255, 199, 0, 0.85) 104.23%);
 }
 
 #feedback-btn:active {
@@ -117,7 +119,7 @@ p {
   /* Green */
 }
 
-@media (max-width: 743px) {
+@media (max-width: 744px) {
   .ham-container {
     display: flex;
     justify-content: center;
@@ -242,13 +244,17 @@ p {
     gap: 10px;
     display: block;
     border-radius: 4px;
-    background: linear-gradient(
+    /* background: linear-gradient(
       125deg,
       #ff8a00 4.94%,
       rgba(255, 199, 0, 0.85) 104.23%
-    );
+    ); */
+    background-color: transparent;
+    border: 1px solid #ff8a00;
 
-    color: #000;
+    /* linear-gradient(125deg, #ff8a00 4.94%, rgba(255, 199, 0, 0.85) 104.23%); */
+
+    color: #ff8a00;
 
     text-align: center;
     font-family: Inter;
