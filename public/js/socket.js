@@ -1,5 +1,5 @@
 //import { WEBSOCKET_URL } from './env.js'
-const WEBSOCKET_URL ="ws://localhost:8080"
+const WEBSOCKET_URL ="ws://no-strings.onrender.com"
 if (!WEBSOCKET_URL) {
   throw new Error('Forgot to initialze some variables')
 }
