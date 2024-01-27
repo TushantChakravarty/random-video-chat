@@ -1,6 +1,6 @@
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #eee;
+  font-family: "Roboto", sans-serif;
+  background-color: black;
   padding: 0px;
   margin: 0px;
 }
@@ -38,9 +38,9 @@ p {
   grid-template-rows: 8% auto 9%;
   grid-template-columns: 30% auto;
   grid-template-areas:
-    'top top'
-    'vid msg'
-    'vid inp';
+    "top top"
+    "vid msg"
+    "vid inp";
 }
 
 /* top bar styles */
