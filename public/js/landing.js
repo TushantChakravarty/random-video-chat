@@ -58,7 +58,7 @@ function configureTags() {
   const $videoBtn = $("#video-btn");
   const $videoBtnDesk = $("#video-btn-desk");
 
-  //   $input.addEventListener("keydown", (e) => {
+  // $input.addEventListener("keydown", (e) => {
   //     if (e.key !== "Enter" && e.key !== ",") return;
 
   //     const value = $input.value.trim();
@@ -72,23 +72,23 @@ function configureTags() {
   //     tag.style = "cursor: pointer";
 
   //     tag.onclick = () => {
-  //       tag.remove();
-  //       allTags = allTags.filter(
-  //         (x) => x !== tag.getElementsByTagName("span")[0].innerText
-  //       );
-  //       updateURL(allTags);
+  //         tag.remove();
+  //         allTags = allTags.filter((x) => x !== tag.getElementsByTagName("span")[0].innerText);
+  //         updateURL(allTags);
   //     };
   //     $tags.appendChild(tag);
 
   //     $input.value = "";
 
   //     e.preventDefault();
-  //   });
+  // });
+  // console.log("coming inside this")
 
-  //   $textBtn.addEventListener("click", () => {
+  // $textBtn.addEventListener("click", () => {
+  //     console.log("coming inside this")
   //     const interests = Array.from($$("#tag p span")).map((x) => x.innerText);
   //     window.location.href = "/chat?" + new URLSearchParams({ interests });
-  //   });
+  // });
 
   $videoBtn.addEventListener("click", () => {
     allTags = [];
@@ -114,6 +114,7 @@ async function getPeopleOnline() {
 
   $peopleOnline.innerHTML = base + noise + +online;
 }
+console.log("coming inside this");
 
 configureTags();
 window.addEventListener("load", initTagsFromURL);
