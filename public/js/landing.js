@@ -46,40 +46,50 @@ function initTagsFromURL() {
 }
 
 function configureTags() {
-    const $input = $("#interest-container input");
-    const $tags = $("#tag-container");
-    const $textBtn = $("#text-btn");
+    // console.log("--------------------------------")
+    // const $input = $("#interest-container input");
+    // console.log("--------------------------------11111111111111111111")
+    // const $tags = $("#tag-container");
+    // console.log("--------------------------------222222222222222222222222")
+
+    // const $textBtn = $("#text-btn");
+
+    // console.log("--------------------------------3333333333333")
     const $videoBtn = $("#video-btn");
+    console.log("--------------------------------4444444444444444444")
 
-    $input.addEventListener("keydown", (e) => {
-        if (e.key !== "Enter" && e.key !== ",") return;
 
-        const value = $input.value.trim();
-        if (!value) return;
+    // $input.addEventListener("keydown", (e) => {
+    //     if (e.key !== "Enter" && e.key !== ",") return;
 
-        allTags.push(value);
-        updateURL(allTags);
-        const tag = document.createElement("div");
-        tag.id = "tag";
-        tag.innerHTML = `<p><span>${esc(value)}</span> ×</p>`;
-        tag.style = "cursor: pointer";
+    //     const value = $input.value.trim();
+    //     if (!value) return;
 
-        tag.onclick = () => {
-            tag.remove();
-            allTags = allTags.filter((x) => x !== tag.getElementsByTagName("span")[0].innerText);
-            updateURL(allTags);
-        };
-        $tags.appendChild(tag);
+    //     allTags.push(value);
+    //     updateURL(allTags);
+    //     const tag = document.createElement("div");
+    //     tag.id = "tag";
+    //     tag.innerHTML = `<p><span>${esc(value)}</span> ×</p>`;
+    //     tag.style = "cursor: pointer";
 
-        $input.value = "";
+    //     tag.onclick = () => {
+    //         tag.remove();
+    //         allTags = allTags.filter((x) => x !== tag.getElementsByTagName("span")[0].innerText);
+    //         updateURL(allTags);
+    //     };
+    //     $tags.appendChild(tag);
 
-        e.preventDefault();
-    });
+    //     $input.value = "";
 
-    $textBtn.addEventListener("click", () => {
-        const interests = Array.from($$("#tag p span")).map((x) => x.innerText);
-        window.location.href = "/chat?" + new URLSearchParams({ interests });
-    });
+    //     e.preventDefault();
+    // });
+    // console.log("coming inside this")
+
+    // $textBtn.addEventListener("click", () => {
+    //     console.log("coming inside this")
+    //     const interests = Array.from($$("#tag p span")).map((x) => x.innerText);
+    //     window.location.href = "/chat?" + new URLSearchParams({ interests });
+    // });
 
     $videoBtn.addEventListener("click", () => {
         allTags = [];
@@ -99,6 +109,7 @@ async function getPeopleOnline() {
 
     $peopleOnline.innerHTML = base + noise + +online;
 }
+console.log("coming inside this")
 
 configureTags();
 window.addEventListener("load", initTagsFromURL);
