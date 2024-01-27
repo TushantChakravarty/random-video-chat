@@ -53,10 +53,10 @@ p {
   border: solid 1px;
   border-color: black/20;
   align-items: center;
-  background-color: black;
-  /* box-shadow: 0 0.1em 0.3em #ccc;
-  -moz-box-shadow: 0 0.1em 0.3em #ccc;
-  -webkit-box-shadow: 0 0.1em 0.3em #ccc; */
+  background: #000;
+  box-shadow: 0px 4px 4px 0px rgba(255, 238, 238, 0.25);
+  -moz-box-shadow: 0px 4px 4px 0px rgba(255, 238, 238, 0.25);
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(255, 238, 238, 0.25);
 }
 #logo {
   height: 100%;
@@ -88,10 +88,127 @@ p {
 #feedback-btn {
   margin: 0;
   padding: 8px;
-  background-color: #4caf50; /* Green */
+  display: flex;
+  width: 174px;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: none;
+  border-radius: 4px;
+  background: linear-gradient(
+    125deg,
+    #ff8a00 4.94%,
+    rgba(255, 199, 0, 0.85) 104.23%
+  );
 }
 #feedback-btn:active {
   background-color: #419544; /* Green */
+}
+
+@media (max-width: 743px) {
+  .ham-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hamburg {
+    width: 24px;
+    height: 24px;
+    color: #ffffff;
+    align-self: center;
+    display: block;
+  }
+
+  #header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 1.25rem 0 1.25rem;
+  }
+
+  #header {
+    width: 20rem;
+    color: #fff;
+    font-family: "Clash Display";
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  #description {
+    width: 20rem;
+    transform: rotate(-0.188deg);
+    color: #797979;
+    font-family: Inter;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.125rem; /* 150% */
+  }
+}
+
+@media (min-width: 744px) {
+  #feedback-btn {
+    margin: 0;
+    padding: 8px;
+    display: flex;
+    width: 174px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: block;
+    border-radius: 4px;
+    background: linear-gradient(
+      125deg,
+      #ff8a00 4.94%,
+      rgba(255, 199, 0, 0.85) 104.23%
+    );
+
+    color: #000;
+
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .ham-container {
+    display: none;
+  }
+
+  #header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 1.25rem 0 1.25rem;
+  }
+
+  #header {
+    width: 42.0625rem;
+    color: #fff;
+    font-family: "Clash Display";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  #description {
+    width: 42.91656rem;
+    transform: rotate(-0.188deg);
+    color: #797979;
+    font-family: Inter;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.625rem; /* 162.5% */
+  }
 }
 
 /* video container */
