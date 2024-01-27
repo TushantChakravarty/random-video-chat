@@ -23,9 +23,11 @@ p {
   padding: 5px;
   cursor: pointer;
 }
+
 .button:active {
   background-color: #007aff;
 }
+
 .mirror {
   transform: scaleX(-1);
 }
@@ -33,6 +35,7 @@ p {
 /* main container styles */
 #main {
   height: 100vh;
+  background-color: black;
   box-sizing: border-box;
   display: grid;
   grid-template-rows: 8% auto 9%;
@@ -58,13 +61,16 @@ p {
   -moz-box-shadow: 0px 4px 4px 0px rgba(255, 238, 238, 0.25);
   -webkit-box-shadow: 0px 4px 4px 0px rgba(255, 238, 238, 0.25);
 }
+
 #logo {
   height: 100%;
 }
+
 #logo img {
   height: 100%;
   width: 122px;
 }
+
 #logo h1 {
   cursor: pointer;
   text-align: left;
@@ -72,11 +78,13 @@ p {
   font-weight: 500;
   margin: 0px;
 }
+
 #top-right {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 #peopleOnline p {
   color: #166af4;
   font-size: 20px;
@@ -85,6 +93,7 @@ p {
   margin: 10px;
   margin-right: 20px;
 }
+
 #feedback-btn {
   margin: 0;
   padding: 8px;
@@ -102,8 +111,10 @@ p {
     rgba(255, 199, 0, 0.85) 104.23%
   );
 }
+
 #feedback-btn:active {
-  background-color: #419544; /* Green */
+  background-color: #419544;
+  /* Green */
 }
 
 @media (max-width: 743px) {
@@ -112,6 +123,7 @@ p {
     justify-content: center;
     align-items: center;
   }
+
   .hamburg {
     width: 24px;
     height: 24px;
@@ -243,6 +255,7 @@ p {
     font-weight: 600;
     line-height: normal;
   }
+
   .ham-container {
     display: none;
   }
@@ -277,7 +290,8 @@ p {
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.625rem; /* 162.5% */
+    line-height: 1.625rem;
+    /* 162.5% */
   }
 
   .hero-container {
@@ -452,12 +466,16 @@ p {
 #self {
   overflow: hidden;
   margin-top: 5px;
+  border-radius: 16px;
 }
+
 #peer {
   margin-bottom: 5px;
   overflow: hidden;
   position: relative;
+  border-radius: 16px;
 }
+
 #peer img {
   position: absolute;
   width: 25%;
@@ -495,30 +513,33 @@ p {
 
 /* message area */
 #message-area {
-  background: #fff;
+  background: #1e1e1e;
   grid-area: msg;
   margin: 8px;
   padding: 10px;
   overflow-y: auto;
   font-size: 20px;
+  border-radius: 16px;
 }
 
 .message-status {
   margin: 8px;
   margin-bottom: 16px;
   font-weight: bold;
+  color: #888;
 }
 
 .message {
   margin: 8px;
+  color: #797979;
 }
 
 .message .you {
-  color: #4285f4;
+  color: #ffffff;
 }
 
 .message .strange {
-  color: #4caf50;
+  color: #f29801;
 }
 
 /* input area */
@@ -535,7 +556,12 @@ p {
   padding: 5px 40px;
   font-size: 20px;
   min-width: 0;
+  background-color: #535353;
+  border-radius: 4px;
+  width: 114px;
+  padding: 5px 0px 14px 0px;
 }
+
 #skip-btn span {
   display: block;
   font-size: 12px;
@@ -554,7 +580,10 @@ p {
   margin: 0 8px;
   padding: 5px 40px;
   font-size: 20px;
+  background-color: #535353;
+  border-radius: 4px;
 }
+
 #send-btn span {
   display: block;
   font-size: 12px;
@@ -564,6 +593,7 @@ p {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -582,6 +612,7 @@ p {
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
 }
+
 .modal-content {
   background-color: #fefefe;
   margin: 3% auto;
@@ -589,18 +620,21 @@ p {
   border: 1px solid #888;
   width: 40%;
 }
+
 .close {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
+
 .close:hover,
 .close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
 }
+
 #feedbackText {
   width: 100%;
   padding: 10px;
@@ -610,6 +644,7 @@ p {
   box-sizing: border-box;
   resize: vertical;
 }
+
 #submit-btn {
   padding: 10px 20px;
 }
