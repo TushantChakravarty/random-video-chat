@@ -80,7 +80,7 @@
           Your go to app for talking to strangers online. Don’t worry, we don’t ask you to login to use the app
         </h3>
         <div >
-          <button class="video-button-desk vdo-btn-text-desk" id="video-btn-desk" >
+          <button class="video-button-desk vdo-btn-text-desk" id="video-btn-desk"  onclick="route()">
            Let’s chat
           </button>
         </div>
@@ -155,7 +155,14 @@
       </form>
     </div>
   </div>
-
+  <script>
+    function route() {
+      console.log(
+        'i was called'
+      )
+      window.location.href = "/video?interests=";
+    }
+  </script>
 
 </body>
 
