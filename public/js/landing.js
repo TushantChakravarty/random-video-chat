@@ -105,9 +105,9 @@ async function getPeopleOnline() {
         return console.error("Couldn't fetch GET /online");
     }
     const { online } = await res.json();
-    console.log(online);
+    console.log('pleople online',online);
 
-    $peopleOnline.innerHTML = base + noise + +online;
+    $peopleOnline.innerHTML =  online;
 }
 //console.log("coming inside this")
 
