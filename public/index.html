@@ -78,7 +78,7 @@
           Your go to app for talking to strangers online. Don’t worry, we don’t ask you to login to use the app
         </h3>
         <div>
-          <button class="video-button-desk" id="video-btn">
+          <button class="video-button-desk" id="video-btn" onclick="route()">
             <p class="vdo-btn-text-desk">Let’s chat</p>
           </button>
         </div>
@@ -153,7 +153,11 @@
       </form>
     </div>
   </div>
-
+  <script defer>
+    function route() {
+      window.location.href = "/video";
+    }
+  </script>
   <script defer src="./js/main.js"></script>
   <script defer src="./js/landing.js" type="module"></script>
 </body>
