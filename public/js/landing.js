@@ -109,7 +109,7 @@ async function getPeopleOnline() {
 
     $peopleOnline.innerHTML = base + noise + +online;
 }
-console.log("coming inside this")
+//console.log("coming inside this")
 
 configureTags();
 window.addEventListener("load", initTagsFromURL);
