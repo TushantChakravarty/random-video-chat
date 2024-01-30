@@ -161,7 +161,15 @@ ws.register('begin', async () => {
 })
 
 ws.register('peopleOnline', async (data) => {
-  $peopleOnline.innerHTML = base + noise + +data
+  const $peopleOnline = $("#peopleOnline p span");
+  const res = await fetch("/online");
+  if (!res.ok) {
+      return console.error("Couldn't fetch GET /online");
+  }
+  const { online } = await res.json();
+  console.log('pleople online',online);
+
+  $peopleOnline.innerHTML =  online;
 })
 
 ws.register('connected', async (data) => {

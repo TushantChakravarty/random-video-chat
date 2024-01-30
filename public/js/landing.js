@@ -1,120 +1,115 @@
 const $ = (x) => document.querySelector(x);
 const $$ = (x) => document.querySelectorAll(x);
 const esc = (x) => {
-  const txt = document.createTextNode(x);
-  const p = document.createElement("p");
-  p.appendChild(txt);
-  return p.innerHTML;
+    const txt = document.createTextNode(x);
+    const p = document.createElement("p");
+    p.appendChild(txt);
+    return p.innerHTML;
 };
-function route() {
-  window.location.href = "/video?" + new URLSearchParams({ interests });
-}
-
 let base = Math.floor(Math.random() * 50 + 30);
 const noise = Math.floor(Math.random() * 10 - 5);
 let allTags = [];
 
 if (!sessionStorage.getItem("peopleOnline")) {
-  sessionStorage.setItem("peopleOnline", base);
+    sessionStorage.setItem("peopleOnline", base);
 } else {
-  base = +sessionStorage.getItem("peopleOnline");
+    base = +sessionStorage.getItem("peopleOnline");
 }
 
 function updateURL(tags) {
-  const url = new URL(window.location.href);
-  url.searchParams.set("tags", tags.join(","));
-  window.history.pushState({}, "", url);
+    const url = new URL(window.location.href);
+    url.searchParams.set("tags", tags.join(","));
+    window.history.pushState({}, "", url);
 }
 
 function initTagsFromURL() {
-  const url = new URL(window.location.href);
-  const tags = url.searchParams.get("tags");
-  const $tags = $("#tag-container");
-  if (tags) {
-    let t = tags.split(",");
-    allTags = t;
-    t.forEach((value) => {
-      const tag = document.createElement("div");
-      tag.id = "tag";
-      tag.innerHTML = `<p><span>${esc(value)}</span> ×</p>`;
-      tag.style = "cursor: pointer";
+    const url = new URL(window.location.href);
+    const tags = url.searchParams.get("tags");
+    const $tags = $("#tag-container");
+    if (tags) {
+        let t = tags.split(",");
+        allTags = t;
+        t.forEach((value) => {
+            const tag = document.createElement("div");
+            tag.id = "tag";
+            tag.innerHTML = `<p><span>${esc(value)}</span> ×</p>`;
+            tag.style = "cursor: pointer";
 
-      tag.onclick = () => {
-        tag.remove();
-        allTags = allTags.filter(
-          (x) => x !== tag.getElementsByTagName("span")[0].innerText
-        );
-        updateURL(allTags);
-      };
-      $tags.appendChild(tag);
-    });
-  }
+            tag.onclick = () => {
+                tag.remove();
+                allTags = allTags.filter((x) => x !== tag.getElementsByTagName("span")[0].innerText);
+                updateURL(allTags);
+            };
+            $tags.appendChild(tag);
+        });
+    }
 }
 
 function configureTags() {
-  //   const $input = $("#interest-container input");
-  //   const $tags = $("#tag-container");
-  //   const $textBtn = $("#text-btn");
-  const $videoBtn = $("#video-btn");
-  const $videoBtnDesk = $("#video-btn-desk");
+    // console.log("--------------------------------")
+    // const $input = $("#interest-container input");
+    // console.log("--------------------------------11111111111111111111")
+    // const $tags = $("#tag-container");
+    // console.log("--------------------------------222222222222222222222222")
 
-  // $input.addEventListener("keydown", (e) => {
-  //     if (e.key !== "Enter" && e.key !== ",") return;
+    // const $textBtn = $("#text-btn");
 
-  //     const value = $input.value.trim();
-  //     if (!value) return;
+    // console.log("--------------------------------3333333333333")
+    const $videoBtn = $("#video-btn");
+    console.log("--------------------------------4444444444444444444")
 
-  //     allTags.push(value);
-  //     updateURL(allTags);
-  //     const tag = document.createElement("div");
-  //     tag.id = "tag";
-  //     tag.innerHTML = `<p><span>${esc(value)}</span> ×</p>`;
-  //     tag.style = "cursor: pointer";
 
-  //     tag.onclick = () => {
-  //         tag.remove();
-  //         allTags = allTags.filter((x) => x !== tag.getElementsByTagName("span")[0].innerText);
-  //         updateURL(allTags);
-  //     };
-  //     $tags.appendChild(tag);
+    // $input.addEventListener("keydown", (e) => {
+    //     if (e.key !== "Enter" && e.key !== ",") return;
 
-  //     $input.value = "";
+    //     const value = $input.value.trim();
+    //     if (!value) return;
 
-  //     e.preventDefault();
-  // });
-  // console.log("coming inside this")
+    //     allTags.push(value);
+    //     updateURL(allTags);
+    //     const tag = document.createElement("div");
+    //     tag.id = "tag";
+    //     tag.innerHTML = `<p><span>${esc(value)}</span> ×</p>`;
+    //     tag.style = "cursor: pointer";
 
-  // $textBtn.addEventListener("click", () => {
-  //     console.log("coming inside this")
-  //     const interests = Array.from($$("#tag p span")).map((x) => x.innerText);
-  //     window.location.href = "/chat?" + new URLSearchParams({ interests });
-  // });
+    //     tag.onclick = () => {
+    //         tag.remove();
+    //         allTags = allTags.filter((x) => x !== tag.getElementsByTagName("span")[0].innerText);
+    //         updateURL(allTags);
+    //     };
+    //     $tags.appendChild(tag);
 
-  $videoBtn.addEventListener("click", () => {
-    allTags = [];
-    const interests = Array.from($$("#tag p span")).map((x) => x.innerText);
-    window.location.href = "/video?" + new URLSearchParams({ interests });
-  });
+    //     $input.value = "";
 
-  $videoBtnDesk.addEventListener("click", () => {
-    allTags = [];
-    const interests = Array.from($$("#tag p span")).map((x) => x.innerText);
-    window.location.href = "/video?" + new URLSearchParams({ interests });
-  });
+    //     e.preventDefault();
+    // });
+    // console.log("coming inside this")
+
+    // $textBtn.addEventListener("click", () => {
+    //     console.log("coming inside this")
+    //     const interests = Array.from($$("#tag p span")).map((x) => x.innerText);
+    //     window.location.href = "/chat?" + new URLSearchParams({ interests });
+    // });
+
+    $videoBtn.addEventListener("click", () => {
+        allTags = [];
+        const interests = Array.from($$("#tag p span")).map((x) => x.innerText);
+        window.location.href = "/video?" + new URLSearchParams({ interests });
+    });
 }
 
 async function getPeopleOnline() {
-  const $peopleOnline = $("#peopleOnline p span");
-  const res = await fetch("/online");
-  if (!res.ok) {
-    return console.error("Couldn't fetch GET /online");
-  }
-  const { online } = await res.json();
-  console.log(online);
+    const $peopleOnline = $("#peopleOnline p span");
+    const res = await fetch("/online");
+    if (!res.ok) {
+        return console.error("Couldn't fetch GET /online");
+    }
+    const { online } = await res.json();
+    console.log('pleople online',online);
 
-  $peopleOnline.innerHTML = base + noise + +online;
+    $peopleOnline.innerHTML =  online;
 }
-console.log("coming inside this");
+//console.log("coming inside this")
 
 configureTags();
 window.addEventListener("load", initTagsFromURL);
