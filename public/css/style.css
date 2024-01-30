@@ -11,7 +11,8 @@ p {
 }
 
 /* general styles */
-.button {
+.button,
+.button-feedback {
   background-color: #4285f4;
   border: none;
   color: white;
@@ -22,6 +23,11 @@ p {
   margin: 5px;
   padding: 5px;
   cursor: pointer;
+}
+
+.button-feedback {
+  background-color: transparent;
+  color: white;
 }
 
 .button:active {
@@ -105,9 +111,11 @@ p {
   gap: 10px;
   display: none;
   border-radius: 4px;
-  background: linear-gradient(125deg,
+  border: 1px solid #ff8a00;
+  background-color: "transparent";
+  /* background: linear-gradient(125deg,
       #ff8a00 4.94%,
-      rgba(255, 199, 0, 0.85) 104.23%);
+      rgba(255, 199, 0, 0.85) 104.23%); */
 }
 
 #feedback-btn:active {
@@ -212,9 +220,11 @@ p {
     gap: 0.625rem;
     flex-shrink: 0;
     border-radius: 0.25rem;
-    background: linear-gradient(125deg,
-        #ff8a00 4.94%,
-        rgba(255, 199, 0, 0.85) 104.23%);
+    background: linear-gradient(
+      125deg,
+      #ff8a00 4.94%,
+      rgba(255, 199, 0, 0.85) 104.23%
+    );
   }
 
   .vdo-btn-text {
@@ -239,9 +249,13 @@ p {
     gap: 10px;
     display: block;
     border-radius: 4px;
-    background: linear-gradient(125deg,
-        #ff8a00 4.94%,
-        rgba(255, 199, 0, 0.85) 104.23%);
+    border: 1px solid #ff8a00;
+    background-color: "transparent";
+    /* background: linear-gradient(
+      125deg,
+      #ff8a00 4.94%,
+      rgba(255, 199, 0, 0.85) 104.23%
+    ); */
 
     color: #000;
 
@@ -337,9 +351,11 @@ p {
     gap: 0.625rem;
     flex-shrink: 0;
     border-radius: 0.25rem;
-    background: linear-gradient(125deg,
-        #ff8a00 4.94%,
-        rgba(255, 199, 0, 0.85) 104.23%);
+    background: linear-gradient(
+      125deg,
+      #ff8a00 4.94%,
+      rgba(255, 199, 0, 0.85) 104.23%
+    );
   }
 
   .vdo-btn-text {
@@ -434,9 +450,11 @@ p {
     align-items: center;
     gap: 0.625rem;
     border-radius: 0.25rem;
-    background: linear-gradient(125deg,
-        #ff8a00 4.94%,
-        rgba(255, 199, 0, 0.85) 104.23%);
+    background: linear-gradient(
+      125deg,
+      #ff8a00 4.94%,
+      rgba(255, 199, 0, 0.85) 104.23%
+    );
 
     .vdo-btn-text-desk {
       color: #000;
